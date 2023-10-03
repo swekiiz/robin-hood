@@ -36,7 +36,7 @@ CustomDocument.getInitialProps = async (ctx: DocumentContext) => {
       /** @param {AppType & EmotionCache} App, but currently use `any` */
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       enhanceApp: (App: any) =>
-        function EnhanceApp(props) {
+        function EnhanceApp(props): JSX.Element {
           return <App emotionCache={cache} {...props} />
         },
     })

@@ -1,10 +1,6 @@
-import { createTheme } from '@mui/material/styles'
+import { alpha, createTheme, responsiveFontSizes } from '@mui/material/styles'
 
-import { mulish as mulishFont } from './font'
-
-const mulish = mulishFont.style.fontFamily
-
-const theme = createTheme({
+let theme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
@@ -16,61 +12,52 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      light: '#3b3b3b',
-      main: '#ec6a37', // * orange brick
-      dark: '#0a106a',
-      contrastText: '#ffffff', // * white
+      light: '#FFE1AE',
+      main: '#FFCB74',
+      dark: '#FFBC47',
+      contrastText: '#111111',
     },
     secondary: {
-      light: '#949494',
-      main: '#8b8b8b', // * dark gray
-      dark: '#3b3b3b',
-      contrastText: '#ffffff', // * white
+      light: '#534D56',
+      main: '#343036',
+      dark: '#1F1D1E',
+      contrastText: '#F7F6FA',
     },
     text: {
-      primary: '#2b2b2b', // * text.dark
-      secondary: '#808080', // * Grey text
+      primary: '#2A262B',
+      secondary: '#818283',
     },
     background: {
-      default: '#f8f9fd', // * background.light
+      default: '#F7F6FA',
+      paper: '#F3F2F8',
     },
-    link: '#182ed1',
-    grey: {
-      '400': '#ecedf0',
-      '500': '#bfbfbf',
-    },
+    link: '#5B49D6',
     success: {
-      main: '#1cc3a5', // * green
-      dark: '#297078',
+      main: '#53B270',
     },
     warning: {
-      main: '#fdd05c', // * yellow
+      main: '#FFA50A',
     },
     error: {
-      light: '#FEF0F0',
-      main: '#fd5c5e', // * red
-      dark: '#9D0A23',
+      main: '#F55659',
     },
     info: {
-      main: '#0a106a',
-      light: '#a8eff7',
+      main: '#6AA2D0',
     },
   },
   typography: {
-    fontFamily: mulish,
     fontWeightBold: 800,
-    h1: { fontSize: '5rem', lineHeight: '6rem', fontWeight: 600, letterSpacing: 0 },
-    h2: { fontSize: '3.75rem', lineHeight: '4.5rem', fontWeight: 600, letterSpacing: 0 },
-    h3: { fontSize: '3rem', lineHeight: '3.625rem', fontWeight: 600, letterSpacing: 0 },
-    h4: { fontSize: '2.5rem', lineHeight: '3rem', fontWeight: 600, letterSpacing: 0 },
-    h5: { fontSize: '2rem', lineHeight: '2.5rem', fontWeight: 600, letterSpacing: 0 },
-    h6: { fontSize: '1.5rem', lineHeight: '2.25rem', fontWeight: 600, letterSpacing: 0 },
-    subtitle1: { fontSize: '1.25rem', lineHeight: '1.75rem', fontWeight: 'lighter', letterSpacing: 0 },
-    subtitle2: { fontSize: '1.2rem', fontWeight: 'lighter' },
-    body1: { fontSize: '1.125rem', lineHeight: '1.75rem', fontWeight: 600, letterSpacing: 0 },
-    body2: { fontSize: '1rem', lineHeight: '1.625rem', fontWeight: 600, letterSpacing: 0 },
-    label: { fontSize: '0.875rem', lineHeight: '1.375rem', fontWeight: 600, letterSpacing: 0 },
-    caption: { fontSize: '0.75rem', lineHeight: '1.125rem', fontWeight: 600, letterSpacing: 0 },
+    h1: { fontSize: '5rem', letterSpacing: 0 },
+    h2: { fontSize: '3.75rem', letterSpacing: 0 },
+    h3: { fontSize: '3rem', letterSpacing: 0 },
+    h4: { fontSize: '2.5rem', letterSpacing: 0 },
+    h5: { fontSize: '2rem', letterSpacing: 0 },
+    h6: { fontSize: '1.5rem', letterSpacing: 0 },
+    subtitle1: { fontSize: '1.25rem', fontWeight: 'lighter', letterSpacing: 0 },
+    subtitle2: { fontSize: '1.2rem', fontWeight: 'lighter', letterSpacing: 0 },
+    body1: { fontSize: '1.125rem', letterSpacing: 0 },
+    body2: { fontSize: '1rem', letterSpacing: 0 },
+    caption: { fontSize: '0.75rem', letterSpacing: 0 },
   },
   shadows: [
     'none',
@@ -115,10 +102,59 @@ theme.components = {
         textDecoration: 'none',
       },
       body: {
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: theme.palette.secondary.dark,
+      },
+    },
+  },
+  MuiTextField: {
+    defaultProps: {
+      variant: 'filled',
+    },
+  },
+  MuiInputBase: {
+    styleOverrides: {
+      input: {
+        '&::placeholder': {
+          opacity: 1,
+        },
+      },
+    },
+  },
+  MuiInput: {
+    styleOverrides: {
+      input: {
+        fontSize: 14,
+        fontWeight: 500,
+        lineHeight: '24px',
+      },
+    },
+  },
+  MuiFilledInput: {
+    styleOverrides: {
+      root: {
+        overflow: 'hidden',
+        backgroundColor: alpha(theme.palette.secondary.main, 0.2),
+        borderRadius: 8,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        transition: theme.transitions.create(['border-color', 'box-shadow']),
+        '&:before': {
+          display: 'none',
+        },
+        '&:after': {
+          display: 'none',
+        },
+      },
+      input: {
+        color: theme.palette.secondary.contrastText,
+        fontSize: 14,
+        fontWeight: 500,
+        lineHeight: '24px',
       },
     },
   },
 }
+
+theme = responsiveFontSizes(theme)
 
 export { theme }
