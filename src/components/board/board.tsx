@@ -29,7 +29,7 @@ export const Board = forwardRef<HTMLDivElement, BoardProps>(({ header, tasks = [
             isDraggingFrom={Boolean(dropSnapshot.draggingFromThisWith)}
             {...dropProvided.droppableProps}
           >
-            <Box px={2}>
+            <Box py={1} px={2}>
               <Typography variant="h6" color="primary.dark" fontWeight={700} textTransform="capitalize">
                 {header}
               </Typography>
