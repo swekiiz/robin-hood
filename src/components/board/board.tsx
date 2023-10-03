@@ -4,6 +4,8 @@ import { Droppable } from 'react-beautiful-dnd'
 
 import { Card } from 'components/card/card'
 
+import { useTasks } from 'contexts/tasks.context'
+
 import { isRefPosition } from 'utils/ref-position'
 
 import { Task, TaskStatus } from 'types'
@@ -17,6 +19,7 @@ type BoardProps = {
 }
 
 export const Board = forwardRef<HTMLDivElement, BoardProps>(({ header, tasks = [], droppableId }, ref) => {
+  const { removeTask } = useTasks()
   return (
     <Root>
       <Droppable droppableId={droppableId}>
@@ -26,7 +29,7 @@ export const Board = forwardRef<HTMLDivElement, BoardProps>(({ header, tasks = [
             isDraggingFrom={Boolean(dropSnapshot.draggingFromThisWith)}
             {...dropProvided.droppableProps}
           >
-            <Box p={2}>
+            <Box px={2}>
               <Typography variant="h6" color="primary.dark" fontWeight={700} textTransform="capitalize">
                 {header}
               </Typography>
@@ -39,6 +42,7 @@ export const Board = forwardRef<HTMLDivElement, BoardProps>(({ header, tasks = [
                     ref={isRefPosition(index, tasks.length) ? ref : undefined}
                     task={task}
                     index={index}
+                    removeTask={removeTask}
                   />
                 ))}
                 {dropProvided.placeholder}

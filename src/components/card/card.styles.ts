@@ -1,4 +1,4 @@
-import { alpha, styled } from '@mui/material'
+import { IconButton, alpha, styled } from '@mui/material'
 
 export const StyledCard = styled('div', {
   shouldForwardProp: (props: string) => !['isDragging', 'isDisappear'].includes(props),
@@ -15,4 +15,13 @@ export const StyledCard = styled('div', {
   boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
   backdropFilter: 'blur(6px)',
   border: `2px solid ${alpha(theme.palette.primary.main, 0.27)}`,
+}))
+
+export const Close = styled(IconButton)(({ theme }) => ({
+  color: theme.palette.common.white,
+  '&:hover': {
+    color: theme.palette.error.main,
+  },
+  marginTop: theme.spacing(-1),
+  marginRight: theme.spacing(-1),
 }))

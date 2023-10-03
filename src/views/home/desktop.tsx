@@ -1,4 +1,4 @@
-import { DragDropContext, DropResult } from 'react-beautiful-dnd'
+import { DragDropContext, DropResult, Droppable } from 'react-beautiful-dnd'
 
 import { Board } from 'components/board/board'
 
@@ -92,11 +92,13 @@ export const Desktop = ({ fetchTask }: DesktopProps) => {
   return (
     <Screen>
       <DragDropContext onDragStart={onDragStart} onDragEnd={onDragEnd}>
-        <BoardContainer>
-          <Board ref={todoRef} header="todo" tasks={tasks.todo} droppableId="todo" />
-          <Board ref={doingRef} header="doing" tasks={tasks.doing} droppableId="doing" />
-          <Board ref={doneRef} header="done" tasks={tasks.done} droppableId="done" />
-        </BoardContainer>
+        <>
+          <BoardContainer>
+            <Board ref={todoRef} header="todo" tasks={tasks.todo} droppableId="todo" />
+            <Board ref={doingRef} header="doing" tasks={tasks.doing} droppableId="doing" />
+            <Board ref={doneRef} header="done" tasks={tasks.done} droppableId="done" />
+          </BoardContainer>
+        </>
       </DragDropContext>
     </Screen>
   )

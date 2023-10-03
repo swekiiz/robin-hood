@@ -1,14 +1,14 @@
 import { Container, styled } from '@mui/material'
 
-export const Screen = styled(Container)(({ theme }) => ({
+export const Screen = styled(Container)(() => ({
   minHeight: '100vh',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundColor: theme.palette.secondary.dark,
 }))
 
 export const BoardContainer = styled('div')(({ theme }) => ({
+  backgroundColor: theme.palette.secondary.dark,
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
