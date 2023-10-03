@@ -3,7 +3,7 @@ import { Stack, Tabs, TabsProps, styled } from '@mui/material'
 export const Root = styled('div')(({ theme }) => ({
   width: '100%',
   minHeight: '100vh',
-  padding: theme.spacing(4),
+  padding: theme.spacing(4, 4, 16, 4),
 }))
 
 export const StyledTabs = styled((props: TabsProps) => (

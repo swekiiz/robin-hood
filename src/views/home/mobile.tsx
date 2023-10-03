@@ -1,14 +1,10 @@
 import { TabContext } from '@mui/lab'
-import { Box, CircularProgress, Stack, Tab, Typography } from '@mui/material'
-import { useEffect, useMemo, useState } from 'react'
+import { CircularProgress, Stack, Tab, Typography } from '@mui/material'
+import { useState } from 'react'
 
 import { TaskList } from 'components/task-list/task-list'
 
-import { useIntersactionObserver } from 'hooks/useIntersectionObserver'
-
 import { useTasks } from 'contexts/tasks.context'
-
-import { categorizeTasksByDate } from 'utils/tasks'
 
 import { TaskStatus } from 'types'
 

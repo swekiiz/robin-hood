@@ -1,7 +1,4 @@
-import { getTodoListData } from 'apis/todo-list-api'
-import { Dispatch, ReactNode, SetStateAction, createContext, useCallback, useContext, useState } from 'react'
-
-import { Task, TaskStatus } from 'types'
+import { ReactNode, createContext, useCallback, useContext, useState } from 'react'
 
 type DrawerContextState = {
   isOpen: boolean

@@ -2,7 +2,7 @@ import { Stack, Typography } from '@mui/material'
 
 import { TaskStatus } from 'types'
 
-import { ChipContainer, ColorIcon, StyledChip } from './status-options-styles'
+import { ChipContainer, StyledChip } from './status-options-styles'
 
 type Option = {
   label: string

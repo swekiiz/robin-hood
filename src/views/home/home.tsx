@@ -1,11 +1,11 @@
 import { CircularProgress, Typography } from '@mui/material'
-import { getTodoListData } from 'apis/todo-list-api'
-import { RequestTimeoutException } from 'errors/request-timeout'
 import { useCallback, useEffect, useState } from 'react'
 
 import { useBreakpoints } from 'hooks/useBreakpoints'
 
 import { useTasks } from 'contexts/tasks.context'
+
+import { RequestTimeoutException } from 'errors/request-timeout'
 
 import { TaskStatus } from 'types'
 

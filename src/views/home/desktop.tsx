@@ -1,5 +1,3 @@
-import { Box, TextField } from '@mui/material'
-import { Dispatch, SetStateAction, useEffect } from 'react'
 import { DragDropContext, DropResult } from 'react-beautiful-dnd'
 
 import { Board } from 'components/board/board'

@@ -1,5 +1,5 @@
 import { Box, Stack, Typography } from '@mui/material'
-import { PanInfo, motion, useAnimationControls } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useMemo } from 'react'
 
 import { TaskListItem } from 'components/task-list-item/task-list-item'

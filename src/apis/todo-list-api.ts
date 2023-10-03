@@ -1,9 +1,8 @@
 import axios from 'axios'
-import { RequestTimeoutException } from 'errors/request-timeout'
 
 import { BACKEND_URL } from 'constants/constants'
 
-import { isDuplicateTaskId } from 'utils/tasks'
+import { RequestTimeoutException } from 'errors/request-timeout'
 
 import { TaskStatus, TasksDetails } from 'types'
 import { getTodoListResponseConverter } from 'types/converter'

@@ -1,5 +1,6 @@
+import { Dispatch, ReactNode, SetStateAction, createContext, useCallback, useContext, useState } from 'react'
+
 import { getTodoListData } from 'apis/todo-list-api'
-import { Dispatch, ReactNode, SetStateAction, createContext, useCallback, useContext, useEffect, useState } from 'react'
 
 import { Task, TaskStatus } from 'types'
 

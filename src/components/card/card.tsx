@@ -1,8 +1,8 @@
-import { Box, Divider, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { forwardRef } from 'react'
 import { Draggable } from 'react-beautiful-dnd'
 
-import { Task, TaskStatus } from 'types'
+import { Task } from 'types'
 
 import { StyledCard } from './card.styles'
 
